@@ -1,9 +1,6 @@
 # CPP-Time-Class
 
-        Directories
+List of Files
 
-Time Class/Lib: The Time Class
-
-Time Class/Demo: Demos
-
-Time Class/Test: My Tests
+Time Class: Time.h Time.cpp
+Demo: Demo_Countdown.cpp
