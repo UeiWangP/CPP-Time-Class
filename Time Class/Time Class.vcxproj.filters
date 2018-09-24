@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Time.h">
+    <ClInclude Include="Lib\Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Time.cpp">
+    <ClCompile Include="Lib\Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Demo_Countdown.cpp">
+    <ClCompile Include="Demo\Demo_Countdown.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

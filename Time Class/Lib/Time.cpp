@@ -1,5 +1,5 @@
 #include <ctime>
-#include "Time.h"
+#include "../Lib/Time.h"
 
 void Time::time_formatting()
 {
@@ -101,6 +101,27 @@ Time::Time(tm * t)
 	hour_ = t->tm_hour;
 	min_ = t->tm_min;
 	sec_ = t->tm_sec;
+}
+
+bool Time::is_leap_year(int year) const
+{
+	if (year % 100 != 0)
+		if (year % 4 == 0)
+			return true;
+		else
+			return false;
+	else if (year % 400 == 0)
+		return true;
+	else return false;
+}
+
+int Time::days_of_a_month(int month) const
+{
+	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		return 31;
+	else if (month == 2)
+		return is_leap_year(year_) ? 29 : 28;
+	else return 30;
 }
 
 void Time::add_hour(int num)
