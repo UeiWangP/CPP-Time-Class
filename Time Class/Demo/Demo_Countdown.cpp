@@ -1,7 +1,6 @@
 #include <iostream>
 #include <ctime>
 #include "../Lib/Time.h"
-#pragma warning(disable : 4996)		//_CRT_SECURE_NO_WARNINGS
 using namespace std;
 void countdown();
 
@@ -31,10 +30,7 @@ void countdown()
 	cin >> sec;
 	cout << "\nCalculating....\n\n";
 	Time t1(year, month, day, hour, min, sec);
-	time_t now;
-	time(&now);		//get current time
-	tm * tm_now = localtime(&now);		//convert to tm
-	Time t2(tm_now);	//convert to Time
+	Time t2 = current_time();
 	Time time_diff = t1 - t2;
 	cout << "Countdown: ";
 	time_diff.show_time_separate();

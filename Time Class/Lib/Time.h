@@ -10,7 +10,7 @@ class Time
 	int hour_ = 0;
 	int min_ = 0;
 	int sec_ = 0;
-	const int months_of_a_year = 12;
+	const int Months_of_a_year = 12;
 	
 	void time_formatting();		//check if the time is in wrong format e.g. second_>=60
 	void date_formatting();		//check if the date is in wrong format e.g. month_>=13;
@@ -47,5 +47,7 @@ public:
 		std::cout << day_ << "d " << hour_ << "h " << min_ << "min " << sec_ << "s";
 	}
 };
+
+Time current_time();
 
 #endif

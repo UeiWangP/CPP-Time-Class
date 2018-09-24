@@ -1,5 +1,6 @@
 #include <ctime>
 #include "../Lib/Time.h"
+#pragma warning(disable : 4996)		//_CRT_SECURE_NO_WARNINGS
 
 void Time::time_formatting()
 {
@@ -26,10 +27,10 @@ void Time::date_formatting()
 	{
 		day_ %= days_of_a_month(month_++);
 	}
-	if (month_ > months_of_a_year)
+	if (month_ > Months_of_a_year)
 	{
-		year_ += month_ / months_of_a_year;
-		month_ %= months_of_a_year;
+		year_ += month_ / Months_of_a_year;
+		month_ %= Months_of_a_year;
 	}
 }
 
@@ -184,5 +185,14 @@ Time Time::operator-(const Time &t) const
 Time Time::operator+(const Time &t) const
 {
 	Time result(year_ + t.year_, month_ + t.month_, day_ + t.day_, hour_ + t.hour_, min_ + t.min_, sec_ + t.sec_);
+	return result;
+}
+
+Time current_time()
+{
+	time_t now;
+	time(&now);		//get current time
+	tm * tm_now = localtime(&now);		//convert to tm
+	Time result(tm_now);	//convert to Time
 	return result;
 }
