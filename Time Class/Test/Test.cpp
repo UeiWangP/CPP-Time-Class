@@ -1,6 +1,6 @@
 #include <iostream>
 #include <ctime>
-#include "Time.h"
+#include "../Lib/Time.h"
 #pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
 using namespace std;
 void test_date_basic();
